@@ -1,4 +1,5 @@
 dataset/
+__pycache__/
 models/bert_base_model.h5
 models/pretrained_BERT/
 .ipynb_checkpoints/
