@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <div class="search-container">
+      <input type="text" placeholder="Search" name="search" id="text">
+      <button onClick="myFunction()", type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+    
+    function myFunction() {
+        var text = document.getElementById('text').value;
+        console.log(text);
+        const url = 'http://127.0.0.1:5000/predict';
+        let send_data = JSON.stringify({
+            'data': text
+        });
+        let fetchData = {
+            method: 'POST',
+            // mode: 'cors',
+            body: send_data,
+            headers:  {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              }
+        }
+        console.log(fetchData);
+        fetch(url, fetchData)
+        .then(data=> data.json())
+            .then(data=>console.log(JSON.stringify(data)))
+            .catch(error=>console.log(JSON.stringify(error)))
+}
+    
+
+
+</script>
+
+
+<div style="padding-left:16px">
+  <h2> Personality Prediction </h2>
+</div>
+
+</body>
+</html>
