@@ -6,3 +6,4 @@ models/pretrained_BERT/
 personality_env/
 twitter_data/
 .env
+.DS_Store
