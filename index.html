@@ -7,12 +7,17 @@
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
+  <a class="active" href="/">Home</a>
   <div class="search-container">
       <input type="text" placeholder="Search" name="search" id="text">
       <button onClick="myFunction()", type="submit">Submit</button>
     </form>
   </div>
+  <div>
+    <input type="text" placeholder="Twitter_handle" name="search" id="twitter_handle">
+    <button onClick="mytweet()", type="submit">Submit</button>
+  </form>
+</div>
 </div>
 
 
@@ -24,6 +29,28 @@
         const url = 'http://127.0.0.1:5000/predict';
         let send_data = JSON.stringify({
             'data': text
+        });
+        let fetchData = {
+            method: 'POST',
+            // mode: 'cors',
+            body: send_data,
+            headers:  {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              }
+        }
+        console.log(fetchData);
+        fetch(url, fetchData)
+        .then(data=> data.json())
+            .then(data=>console.log(JSON.stringify(data)))
+            .catch(error=>console.log(JSON.stringify(error)))
+}
+function mytweet() {
+        var text = document.getElementById('twitter_handle').value;
+        console.log(text);
+        const url = 'http://127.0.0.1:5000/tweet_pred';
+        let send_data = JSON.stringify({
+            'handle': text
         });
         let fetchData = {
             method: 'POST',
