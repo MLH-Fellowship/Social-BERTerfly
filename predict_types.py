@@ -55,7 +55,21 @@ def predict_tweet(username):
     tweet_ind = tweet_vals.argmax(axis=1)
     return (per_types[stats.mode(tweet_ind).mode[0]])
 
-
+def predict_follow(username):
+    follow_df = pd.read_csv("twitter_data/fol_"+str(username)+".csv")
+    follow_json = {}
+    for i in range(5):
+        list_j = follow_df.tweets.iloc[i].split(", \'")
+        new_list = []
+        for j in list_j:
+            new_list.append(clean_text(j))
+        tweet_ids = [tokenizer.encode(str(k), max_length = 100 , pad_to_max_length = True) for k in new_list]
+        tweet_vals = new_model.predict(np.array(tweet_ids))
+        tweet_ind = tweet_vals.argmax(axis=1)
+        print (per_types[stats.mode(tweet_ind).mode[0]])
+        follow_json[str(i)] = per_types[stats.mode(tweet_ind).mode[0]]
+    return follow_json
+    
 
 # new_mod = recreate_model()
 # print (new_mod.summary())
