@@ -1,11 +1,14 @@
-
 from flask import Flask, render_template, request, redirect, url_for,jsonify
 from flask_cors import CORS
 from predict_types import predict_type,recreate_model, predict_tweet
 from twitterscraper import tweet_return
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 CORS(app)
+
+@app.route('/')
+def home():
+    return render_template('result.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def testfn():
@@ -35,4 +38,4 @@ def tweet():
         return jsonify({"type":str(user_type)}),200
 
 if __name__ == '__main__' :
-    app.run(debug=True,port=5000)
+    app.run(debug=True, port=5000)
