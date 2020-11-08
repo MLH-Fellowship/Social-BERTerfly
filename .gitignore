@@ -5,5 +5,7 @@ models/pretrained_BERT/
 .ipynb_checkpoints/
 personality_env/
 twitter_data/
+geckodriver.log
+fbscraper.py
 .env
 .DS_Store

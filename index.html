@@ -18,6 +18,10 @@
     <button onClick="mytweet()", type="submit">Submit</button>
   </form>
 </div>
+<div>
+  <button onClick="myfollowers()", type="submit">Followers</button>
+</form>
+</div>
 </div>
 
 
@@ -63,11 +67,35 @@ function mytweet() {
         }
         console.log(fetchData);
         fetch(url, fetchData)
+        .then(fetch("http://127.0.0.1:5000/tweet_pred"))
+            .then(data=>{
+              console.log("Done!")
+            })
+            .catch(error=>console.log(JSON.stringify(error)))
+}
+
+function myfollowers() {
+        var text = document.getElementById('twitter_handle').value;
+        console.log(text);
+        const url = 'http://127.0.0.1:5000/follow_pred';
+        let send_data = JSON.stringify({
+            'handle': text
+        });
+        let fetchData = {
+            method: 'POST',
+            // mode: 'cors',
+            body: send_data,
+            headers:  {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              }
+        }
+        console.log(fetchData);
+        fetch(url, fetchData)
         .then(data=> data.json())
             .then(data=>console.log(JSON.stringify(data)))
             .catch(error=>console.log(JSON.stringify(error)))
 }
-    
 
 
 </script>

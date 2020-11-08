@@ -1,5 +1,5 @@
 import tweepy
-from tweepy import OAuthHandler
+from tweepy import OAuthHandler,API
 import pandas as pd
 import time
 from dotenv import load_dotenv
@@ -20,6 +20,7 @@ class TwitterClient(object):
         try:
             # OAuthHandler object 
             auth = OAuthHandler(consumer_key, consumer_secret) 
+            # self.auth_api = API(auth)
             # set access token and secret 
             auth.set_access_token(access_token, access_token_secret) 
             # create tweepy API object to fetch tweets 
@@ -48,8 +49,37 @@ class TwitterClient(object):
         except BaseException as e:
             print('failed on_status,',str(e))
             time.sleep(3)
-    
+    def get_user_followers(self,user):
+
+        username = user
+
+        follower_ids = []
+        nfollowers = 5
+        print ("Getting followers...")
+        users = tweepy.Cursor(self.api.friends,id = username,count=nfollowers).items(nfollowers)
+        tweets_list = []
+        for user in users:
+            # tweet_user = []
+            print ("Adding followers...")
+            try:
+                follower_ids.append(user.screen_name)
+                tweets = tweepy.Cursor(self.api.user_timeline,id=user.screen_name).items(10)
+                # print ([tweet.text for tweet in tweets])
+                tweets_list.append([tweet.text for tweet in tweets])
+            except tweepy.TweepError as e:
+                print (e)
+                time.sleep(60)
+        print (tweets_list)
+        tweet_df = pd.DataFrame({'follower':follower_ids})
+        tweet_df["tweets"] = pd.Series(tweets_list)
+        print (follower_ids)
+        return tweet_df
+
 def tweet_return(tweet_handle):
     twitter = TwitterClient()
     tweet_path = "twitter_data/"+"tweets_"+str(tweet_handle)+".csv"
+    tweet_fol_path = "twitter_data/"+"fol_"+str(tweet_handle)+".csv"
     twitter.get_user_tweets(str(tweet_handle)).to_csv(tweet_path)
+    twitter.get_user_followers(str(tweet_handle)).to_csv(tweet_fol_path)
+
+    
