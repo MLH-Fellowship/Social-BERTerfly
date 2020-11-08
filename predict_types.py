@@ -53,7 +53,28 @@ def predict_tweet(username):
     tweet_ids = [tokenizer.encode(str(i), max_length = 50 , pad_to_max_length = True) for i in tweet_csv.cleaned.values]
     tweet_vals = new_model.predict(np.array(tweet_ids))
     tweet_ind = tweet_vals.argmax(axis=1)
-    return (per_types[stats.mode(tweet_ind).mode[0]])
+    per_op = per_types[stats.mode(tweet_ind).mode[0]]
+    op_json = {}
+    op_json["type"] = str(per_op)
+    et = np.sum(tweet_vals,axis = 0)
+    summer = np.sum(et)
+    intro = np.sum(et[8:])/np.sum(et)*100
+    intui = np.sum(et[0:4]+et[8:12])/summer*100
+    feeli = np.sum(et[0:2]+et[4:6] + et[8:10] + et[12:14])/summer*100
+    judgi = np.sum(et[::2]/summer*100)
+    info_df = pd.read_csv("reference_data/MBTI.csv")
+    op_json["introvertism"] = str(intro)
+    op_json["extrovertism"] = str(100-intro)
+    op_json["intuition"] = str(intui)
+    op_json["sensing"] = str(100-intui)
+    op_json["feeling"] = str(feeli)
+    op_json["thinking"] = str(100-feeli)
+    op_json["judging"] = str(judgi)
+    op_json["perceiving"] = str(100-judgi)
+    op_json["traits"] = info_df[info_df["type"]==per_op]["traits"].values[0]
+    op_json["career"] = info_df[info_df["type"]==per_op]["career"].values[0]
+    op_json["people"] = info_df[info_df["type"]==per_op]["eminent personalities"].values[0]
+    return op_json
 
 def predict_follow(username):
     follow_df = pd.read_csv("twitter_data/fol_"+str(username)+".csv")
