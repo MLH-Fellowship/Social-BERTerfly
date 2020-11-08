@@ -35,7 +35,7 @@ def tweet():
         tweet_return(user_handle)
         user_type = predict_tweet(user_handle)
         # render_template('result.html')
-        return jsonify({"type":str(user_type)}),200
+        return jsonify(user_type),200
 
 @app.route('/follow_pred', methods=['GET', 'POST'])
 def follow_tweet():

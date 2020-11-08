@@ -134,9 +134,9 @@
                     fetch(url, fetchData)
                     .then(response => response.json())
                       .then(tweet_pred => {
-                        let output = '<h2> Your Personality type is </h2>'
+                        let output = '<h2> Your Personality traits are: </h2>'
                         output += `
-                            ${tweet_pred}
+                            ${tweet_pred["traits"]}
                         `;
                     document.getElementById("response").innerHTML = output; 
                     document.getElementById("results").style.display = "block";
