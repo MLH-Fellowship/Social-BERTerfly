@@ -822,6 +822,9 @@
               </div>-->
               <div class="text-center"><button onClick="mytweet()", type="submit">Submit</button></div>
               <div id="response"></div>
+              <button type="button" onClick="myres()", id="results" value="Explore full results" style="display: none;">
+                Explore full results
+              </button>
               <script>
                 function mytweet() {
                   var text = document.getElementById('twitter_handle').value;
@@ -841,17 +844,19 @@
                   }
                   console.log(fetchData);
                   fetch(url, fetchData)
-                  .then(response => response.json())
-                    .then(tweet_pred => {
-                      let output = '<h2> Your Personality type </h2>'
-                      output += `
-                          ${tweet_pred.type}
-                      `;
-                  document.getElementById("response").innerHTML = output; 
-                });
-                //.catch(error=>console.log(JSON.stringify(error)))
+                    .then(response => response.json())
+                      .then(tweet_pred => {
+                        let output = '<h2> Your Personality type is </h2>'
+                        output += `
+                            <h1>${tweet_pred["type"]}<h1>
+                        `;
+                    document.getElementById("response").innerHTML = output; 
+                    document.getElementById("results").style.display = "block";
+                  });
                 }
-   
+                function myres(){
+                  window.location.href = "http://127.0.0.1:5000/tweet_pred";
+                }
               </script>
             </form>
 

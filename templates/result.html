@@ -106,8 +106,13 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>-->
-                <div class="text-center"><button onClick="mytweet()", type="submit">Submit</button></div>
+                <div class="text-center">
+                  <button onClick="mytweet()", type="submit">Submit</button>
+                </div>
                 <div id="response"></div>
+                <button type="button" id="results" value="Explore full results" style="display: none;">
+                  Explore full results
+                </button>
                 <script>
                   function mytweet() {
                     var text = document.getElementById('twitter_handle').value;
@@ -125,15 +130,16 @@
                         'Content-Type': 'application/json'
                       }
                     }
-                    console.log(fetchData);
+                    // console.log(fetchData);
                     fetch(url, fetchData)
                     .then(response => response.json())
                       .then(tweet_pred => {
                         let output = '<h2> Your Personality type is </h2>'
                         output += `
-                            <h1>${tweet_pred.type}<h1>
+                            <h1>${tweet_pred["type"]}<h1>
                         `;
                     document.getElementById("response").innerHTML = output; 
+                    document.getElementById("results").style.display = "block";
                   });
                   //.catch(error=>console.log(JSON.stringify(error)))
                   }

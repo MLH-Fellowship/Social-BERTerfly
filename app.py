@@ -8,7 +8,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('result.html')
+    return render_template('homepage.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def testfn():
@@ -27,14 +27,14 @@ def testfn():
 def tweet():
     # GET request
     if request.method == 'GET':
-        message = {'greeting':'Hello from Flask!'}
-        return jsonify(message)  # serialize and use JSON headers
+        return render_template('result.html')
     # POST request
     if request.method == 'POST':
         data = request.get_json()  # parse as JSON
         user_handle = data["handle"]
         tweet_return(user_handle)
         user_type = predict_tweet(user_handle)
+        # render_template('result.html')
         return jsonify({"type":str(user_type)}),200
 
 @app.route('/follow_pred', methods=['GET', 'POST'])

@@ -67,8 +67,10 @@ function mytweet() {
         }
         console.log(fetchData);
         fetch(url, fetchData)
-        .then(data=> data.json())
-            .then(data=>console.log(JSON.stringify(data)))
+        .then(fetch("http://127.0.0.1:5000/tweet_pred"))
+            .then(data=>{
+              console.log("Done!")
+            })
             .catch(error=>console.log(JSON.stringify(error)))
 }
 
