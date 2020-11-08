@@ -848,7 +848,7 @@
                       .then(tweet_pred => {
                         let output = '<h2> Your Personality type is </h2>'
                         output += `
-                            <h1>${tweet_pred["type"]}<h1>
+                            ${tweet_pred["type"]}
                         `;
                     document.getElementById("response").innerHTML = output; 
                     document.getElementById("results").style.display = "block";
