@@ -62,9 +62,15 @@ def predict_tweet(username):
     intui = np.sum(et[0:4]+et[8:12])/summer*100
     feeli = np.sum(et[0:2]+et[4:6] + et[8:10] + et[12:14])/summer*100
     judgi = np.sum(et[::2]/summer*100)
-    trait_per = [intro,intui,feeli,judgi]
     info_df = pd.read_csv("reference_data/MBTI.csv")
-    op_json["percentages"] = str(trait_per)
+    op_json["introvertism"] = str(intro)
+    op_json["extrovertism"] = str(100-intro)
+    op_json["intuition"] = str(intui)
+    op_json["sensing"] = str(100-intui)
+    op_json["feeling"] = str(feeli)
+    op_json["thinking"] = str(100-feeli)
+    op_json["judging"] = str(judgi)
+    op_json["perceiving"] = str(100-judgi)
     op_json["traits"] = info_df[info_df["type"]==per_op]["traits"].values[0]
     op_json["career"] = info_df[info_df["type"]==per_op]["career"].values[0]
     op_json["people"] = info_df[info_df["type"]==per_op]["eminent personalities"].values[0]
