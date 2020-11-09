@@ -109,9 +109,15 @@
                 <div class="text-center">
                   <button onClick="mytweet()", type="submit">Submit</button>
                 </div>
-                <div id="response"></div>
+                <!-- <br>
+                <div class="text-center">
+                  <button onClick="myfollowers()", type="submit">Submit for followers</button>
+                </div>
+                <br> -->
+                <br>
+                <!-- <div id="response"></div>
                 <button type="button" id="results" value="Explore full results" style="display: none;">
-                  Explore full results
+                  Explore full results -->
                 </button>
                 <script>
                   function mytweet() {
@@ -134,21 +140,196 @@
                     fetch(url, fetchData)
                     .then(response => response.json())
                       .then(tweet_pred => {
-                        let output = '<h2> Your Personality traits are: </h2>'
-                        output += `
-                            ${tweet_pred["traits"]}
-                        `;
-                    document.getElementById("response").innerHTML = output; 
+                        let type = `<h3>${tweet_pred["type"]}</h3>`;
+                        let trait = `<h3>${tweet_pred["traits"]}<h3>`;
+                        let career = `<h3>${tweet_pred["career"]}<h3>`;
+                        let people = `<h3>${tweet_pred["people"]}<h3>`;
+                    document.getElementById("response").innerHTML = type; 
+                    document.getElementById("traits").innerHTML = trait; 
+                    document.getElementById("careers").innerHTML = career; 
+                    document.getElementById("people").innerHTML = people; 
                     document.getElementById("results").style.display = "block";
                   });
                   //.catch(error=>console.log(JSON.stringify(error)))
                   }
-     
-                </script>
-</form>
 
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        function myfollowers() {
+        var text = document.getElementById('twitter_handle').value;
+        console.log(text);
+        const url = 'http://127.0.0.1:5000/follow_pred';
+        let send_data = JSON.stringify({
+            'handle': text
+        });
+        let fetchData = {
+            method: 'POST',
+            // mode: 'cors',
+            body: send_data,
+            headers:  {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              }
+        }
+        fetch(url, fetchData)
+      .then(data => data.json())
+        .then(follow_pred => {
+          let output = `<h3>${follow_pred["type"]}</h3>`;
+      document.getElementById("followers").innerHTML = output; 
+      document.getElementById("results").style.display = "block";
+    });
+  }        
+    </script>
+</form>
+<div class="row">
+  <div class="col-md-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="d-flex">
+              <div class="wrapper">
+                <h3 class="mb-0 font-weight-semibold text-primary">Your Personality Type:</h3>
+                <div id="response"></div>
+                <!--<h5 class="mb-0 font-weight-medium text-primary">____%</h5>-->
+                <!--<p class="mb-0 text-muted">+14.00(+0.50%)</p>-->
+              </div>
+              <div class="wrapper my-auto ml-auto ml-lg-4">
+                <!--<canvas height="50" width="100" id="stats-line-graph-1"></canvas>-->
+                <!--<h5 class="mb-0 font-weight-medium text-primary">Personality Type</h5>--> 
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+            <!--<div class="d-flex">
+              <div class="wrapper">
+                <h3 class="mb-0 font-weight-semibold">Personality 2</h3>
+                <h5 class="mb-0 font-weight-medium text-primary">____%</h5>
+                <p class="mb-0 text-muted">+138.97(+0.54%)</p>
+              </div>
+              <div class="wrapper my-auto ml-auto ml-lg-4">
+                <canvas height="50" width="100" id="stats-line-graph-2">_____%</canvas>
+                <h5 class="mb-0 font-weight-medium text-primary">____%</h5> 
+              </div>
+            </div>-->
+          </div>
+          <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+            <!--<div class="d-flex">
+              <div class="wrapper">
+                <h3 class="mb-0 font-weight-semibold">Personality 3</h3>
+                <h5 class="mb-0 font-weight-medium text-primary">_____%</h5>
+                <p class="mb-0 text-muted">+57.62(+0.76%)</p>
+              </div>-->
+              <div class="wrapper my-auto ml-auto ml-lg-4">
+                <!--<canvas height="50" width="100" id="stats-line-graph-3"></canvas>-->
+                
+                <!-- <h1 class="mb-0 font-weight-medium">Personality</h1>  -->
+              </div>
+            <!--</div>-->
+          </div>
+          <!--<div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+            div class="d-flex">
+              <div class="wrapper">
+                <h3 class="mb-0 font-weight-semibold">Personality 4</h3>
+                <h5 class="mb-0 font-weight-medium text-primary">____%</h5>
+                <p class="mb-0 text-muted">+138.97(+0.54%)</p>
+              </div>
+              <div class="wrapper my-auto ml-auto ml-lg-4">
+                <canvas height="50" width="100" id="stats-line-graph-4"></canvas>
+                <h1 class="mb-0 font-weight-medium text-primary">Personality Type</h1> 
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> -->
 <div id="preloader"></div>
+<br>
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="mb-0 font-weight-semibold text-primary">Top Personality Traits:</h3><!--"card-title mb-0"-->
+        <div id="traits"></div>
+        <!--<div class="d-flex flex-column flex-lg-row">
+          <p>Lorem ipsum is placeholder text commonly used</p>
+          <ul class="nav nav-tabs sales-mini-tabs ml-lg-auto mb-4 mb-md-0" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="sales-statistics_switch_1" data-toggle="tab" role="tab" aria-selected="true">1D</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="sales-statistics_switch_2" data-toggle="tab" role="tab" aria-selected="false">5D</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="sales-statistics_switch_3" data-toggle="tab" role="tab" aria-selected="false">1M</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="sales-statistics_switch_4" data-toggle="tab" role="tab" aria-selected="false">1Y</a>
+            </li>
+          </ul>
+        </div>-->
+        <!--<div class="d-flex flex-column flex-lg-row">
+          <div class="data-wrapper d-flex mt-2 mt-lg-0">
+            <div class="wrapper pr-5">
+              <h5 class="mb-0">Total Cost</h5>
+              <div class="d-flex align-items-center">
+                <h4 class="font-weight-semibold mb-0">15,263</h4>
+                <small class="ml-2 text-gray d-none d-lg-block"><b>89.5%</b> of 20,000 Total</small>
+              </div>
+            </div>
+            <div class="wrapper">
+              <h5 class="mb-0">Total Revenue</h5>
+              <div class="d-flex align-items-center">
+                <h4 class="font-weight-semibold mb-0">$753,098</h4>
+                <small class="ml-2 text-gray d-none d-lg-block"><b>10.5%</b> of 20,000 Total</small>
+              </div>
+            </div>
+          </div>
+          <div class="ml-lg-auto" id="sales-statistics-legend"></div>
+        </div>-->
+        <!--<canvas class="mt-5" height="120" id="sales-statistics-overview"></canvas>-->
+      </div>
+    </div>
+  </div>
+<br>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="mb-0 font-weight-semibold text-primary">Careers:</h3>
+            <!-- <div class="d-flex mt-3 py-2 border-bottom"> -->
+             <div id="careers"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- <div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="mb-0 font-weight-semibold text-primary">Followers</h3>
+            <div id="followers:"></div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="mb-0 font-weight-semibold text-primary">Percentages:</h3>
+            <!-- <div class="d-flex mt-3 py-2 border-bottom"> -->
+             <div id="perc"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+  </div>
+</div>
+</div>
 
 <!-- Vendor JS Files -->
 <script src="static/assets/vendor/jquery/jquery.min.js"></script>
@@ -160,6 +341,7 @@
 <script src="static/assets/vendor/counterup/counterup.min.js"></script>
 <script src="static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="static/assets/vendor/aos/aos.js"></script>
+
 
 <!-- Template Main JS File -->
 <script src="static/assets/js/main.js"></script>

@@ -74,7 +74,7 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>-->
-          <li><a href="#contact">Get Started</a></li>
+          <li><a href="http://127.0.0.1:5000/tweet_pred">Get Started</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -822,9 +822,21 @@
               </div>-->
               <div class="text-center"><button onClick="mytweet()", type="submit">Submit</button></div>
               <div id="response"></div>
-              <button type="button" onClick="myres()", id="results" value="Explore full results" style="display: none;">
-                Explore full results
+              <br>
+              <div id="respons"></div>
+              <br>
+              <div class="text-center">
+                <button onClick="myfollowers()", type="submit">Submit for followers</button>
+              </div>
+              <br>
+              <br>
+              <div id="respons"></div>
+              <br>
+              <div class="text-center">
+              <button type="submit" onClick="myres()", id="results" value="Explore full results">
+                Go to Dashboard 
               </button>
+              </div>
               <script>
                 function mytweet() {
                   var text = document.getElementById('twitter_handle').value;
@@ -846,10 +858,10 @@
                   fetch(url, fetchData)
                     .then(response => response.json())
                       .then(tweet_pred => {
-                        let output = '<h2> Your Personality type is </h2>'
-                        output += `
-                            ${tweet_pred["type"]}
+                        let  output = `
+                           <h3> ${tweet_pred["type"]} </h3>
                         `;
+                       
                     document.getElementById("response").innerHTML = output; 
                     document.getElementById("results").style.display = "block";
                   });
@@ -857,6 +869,32 @@
                 function myres(){
                   window.location.href = "http://127.0.0.1:5000/tweet_pred";
                 }
+
+                
+        function myfollowers() {
+        var text = document.getElementById('twitter_handle').value;
+        console.log(text);
+        const url = 'http://127.0.0.1:5000/follow_pred';
+        let send_data = JSON.stringify({
+            'handle': text
+        });
+        let fetchData = {
+            method: 'POST',
+            // mode: 'cors',
+            body: send_data,
+            headers:  {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              }
+        }
+        fetch(url, fetchData)
+      .then(response => response.json())
+        .then(follow_pred => {
+          let output = `<h3>${follow_pred["type"]}</h3>`;
+      document.getElementById("respons").innerHTML = output; 
+      document.getElementById("results").style.display = "block";
+    });
+  }  
               </script>
             </form>
 
