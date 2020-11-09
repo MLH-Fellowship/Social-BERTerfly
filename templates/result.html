@@ -146,9 +146,10 @@
                         let people = `<h3>${tweet_pred["people"]}<h3>`;
                     document.getElementById("response").innerHTML = type; 
                     document.getElementById("traits").innerHTML = trait; 
-                    document.getElementById("careers").innerHTML = career; 
+                    document.getElementById("careers").innerHTML = career;
+                    console.log(people); 
                     document.getElementById("people").innerHTML = people; 
-                    document.getElementById("results").style.display = "block";
+                    // document.getElementById("results").style.display = "block";
                   });
                   //.catch(error=>console.log(JSON.stringify(error)))
                   }
@@ -316,9 +317,9 @@
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h3 class="mb-0 font-weight-semibold text-primary">Percentages:</h3>
+        <h3 class="mb-0 font-weight-semibold text-primary">People:</h3>
             <!-- <div class="d-flex mt-3 py-2 border-bottom"> -->
-             <div id="perc"></div>
+             <div id="people"></div>
       </div>
     </div>
   </div>
