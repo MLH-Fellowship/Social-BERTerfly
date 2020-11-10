@@ -50,7 +50,7 @@ class TwitterClient(object):
             print('failed on_status,',str(e))
             time.sleep(3)
     def get_user_followers(self,user):
-
+        # to fetch 5 followers of the user and their personality types
         username = user
 
         follower_ids = []
