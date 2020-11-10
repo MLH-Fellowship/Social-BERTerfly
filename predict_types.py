@@ -55,6 +55,7 @@ def predict_tweet(username):
     tweet_ind = tweet_vals.argmax(axis=1)
     per_op = per_types[stats.mode(tweet_ind).mode[0]]
     op_json = {}
+    op_json["name"] = str(username)
     op_json["type"] = str(per_op)
     et = np.sum(tweet_vals,axis = 0)
     summer = np.sum(et)

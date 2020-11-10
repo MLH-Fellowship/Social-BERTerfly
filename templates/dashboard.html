@@ -189,7 +189,7 @@
                   <div class="dot-indicator bg-success"></div>
                 </div>-->
                 <div class="text-wrapper">
-                  <p class="profile-name">Twitter User</p>
+                  <p class="profile-name" id="user_name"></p>
                   <!--<p class="designation">Premium user</p>-->
                 </div>
               </a>
@@ -973,6 +973,7 @@
       document.getElementById("career2").innerHTML = personality_data["career"].split(", ")[1];
       document.getElementById("career3").innerHTML = personality_data["career"].split(", ")[2];
       document.getElementById("career4").innerHTML = personality_data["career"].split(", ")[3];
+      document.getElementById("user_name").innerHTML = personality_data["name"]
       document.getElementById("follower1").innerHTML = follower_data["0"];
       document.getElementById("follower2").innerHTML = follower_data["1"];
       document.getElementById("follower3").innerHTML = follower_data["2"];
