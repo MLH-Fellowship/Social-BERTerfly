@@ -1,11 +1,11 @@
 dataset/
 __pycache__/
-models/bert_base_model.h5
-models/pretrained_BERT/
+/server/models/bert_base_model.h5
+/server/models/pretrained_BERT/
 .ipynb_checkpoints/
 personality_env/
-twitter_data/
+/server/twitter_data/
 geckodriver.log
 fbscraper.py
-.env
+/server/.env
 .DS_Store
