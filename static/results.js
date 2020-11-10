@@ -1,0 +1,1 @@
+var personality_data={'type': 'ISTJ', 'introvertism': 61, 'extrovertism': 38, 'intuition': 32, 'sensing': 67, 'feeling': 53, 'thinking': 46, 'judging': 43, 'perceiving': 56, 'traits': 'Systematic, Factual, Organized, Logical, Responsible', 'career': 'Military officer, Lawyer, Judge, Police Officer, Detective', 'people': 'Henry Ford, Jeff Bezos, Julia Roberts, Natalie Portman'}

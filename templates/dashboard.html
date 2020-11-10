@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'assets2/css/demo_1/style.css')}}">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{ url_for('static', filename= 'assets2/images/favicon.ico')}}" />
-    <script src = "{{ url_for('static', filename= 'assets2/results.js')}}"></script>
+    <script src = "/static/results.js"></script>
   </head>
   <body>
     <div class="container-scroller">
@@ -195,7 +195,7 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="http://127.0.0.1:5000/tweet_pred">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
@@ -288,7 +288,7 @@
                     </ul>-->
                     <ul class="quick-links ml-auto">
                       <!--<li><a href="#">Settings</a></li>-->
-                      <li><a href="#">Log Out</a></li>
+                      <li><a href="http://127.0.0.1:5000/">Log Out</a></li>
                       <!--<li><a href="#">Log Out</a></li>-->
                     </ul>
                   </div>
@@ -367,7 +367,6 @@
                           </div>-->
                           <div class="wrapper my-auto ml-auto ml-lg-4" id="per_type">
                             <!--<canvas height="50" width="100" id="stats-line-graph-3"></canvas>-->
-                            <h1 class="mb-0 font-weight-medium">Personality</h1> 
                           </div>
                         <!--</div>-->
                       </div>
@@ -959,11 +958,11 @@
       document.getElementById("trait1").innerHTML = personality_data["traits"].split(", ")[0];
       document.getElementById("trait2").innerHTML = personality_data["traits"].split(", ")[1];
       document.getElementById("trait3").innerHTML = personality_data["traits"].split(", ")[2];
-      document.getElementById("trait3").innerHTML = personality_data["traits"].split(", ")[3];
+      document.getElementById("trait4").innerHTML = personality_data["traits"].split(", ")[3];
       document.getElementById("people1").innerHTML = personality_data["people"].split(", ")[0];
       document.getElementById("people2").innerHTML = personality_data["people"].split(", ")[1];
       document.getElementById("people3").innerHTML = personality_data["people"].split(", ")[2];
-      document.getElementById("people3").innerHTML = personality_data["people"].split(", ")[3];
+      document.getElementById("people4").innerHTML = personality_data["people"].split(", ")[3];
     </script>
     <script src="{{ url_for('static', filename= 'assets2/vendors/js/vendor.bundle.base.js')}}"></script>
     <script src="{{ url_for('static', filename= 'assets2/vendors/js/vendor.bundle.addons.js')}}"></script>

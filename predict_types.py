@@ -74,7 +74,7 @@ def predict_tweet(username):
     op_json["traits"] = info_df[info_df["type"]==per_op]["traits"].values[0]
     op_json["career"] = info_df[info_df["type"]==per_op]["career"].values[0]
     op_json["people"] = info_df[info_df["type"]==per_op]["eminent personalities"].values[0]
-    perfile = open("static/assets2/results.js","w")
+    perfile = open("static/results.js","w")
     perstr = "var personality_data="+str(op_json)+"\n"
     perfile.write(perstr)
     perfile.close()
