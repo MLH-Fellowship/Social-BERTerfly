@@ -190,7 +190,7 @@
           pointBackgroundColor: 'rgba(150, 77, 247,1)',
           pointHoverRadius: 10,
           pointHitRadius: 5,
-          data: [65, 75, 70, 80, 60, 80, 36, 60] //results.results
+          data: [personality_data['introvertism'], personality_data['extrovertism'], personality_data['sensing'], personality_data['intuition'], personality_data['thinking'], personality_data['feeling'], personality_data['judging'], personality_data['perceiving']] //results.results
         }] 
       };
 
