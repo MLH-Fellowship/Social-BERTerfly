@@ -80,6 +80,7 @@
                           <div class="wrapper my-auto ml-auto ml-lg-4">
                             <!--<canvas height="50" width="100" id="stats-line-graph-1"></canvas>-->
                             <h1 class="mb-n1 font-weight-semibold" id="per_type"></h1> 
+                            <h1 class="mb-n1 font-weight-semibold" id="per_name"></h1> 
                           </div>
                         </div>
                       </div>
@@ -232,7 +233,7 @@
                             <h5 class="mb-n1 font-weight-semibold" id ="follower1"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                          <h5 class="text-muted ml-auto" id="followername1"></h5>
                         </div>
                         <div class="d-flex py-2 border-bottom">
                           <!--<span class="img-sm rounded-circle bg-warning text-white text-avatar">OH</span>-->
@@ -240,7 +241,7 @@
                             <h5 class="mb-n1 font-weight-semibold" id ="follower2"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                          <h5 class="text-muted ml-auto" id="followername2"></h5>
                         </div>
                         <div class="d-flex py-2 border-bottom">
                           <!--<img class="img-sm rounded-circle" src="assets/images/faces/face4.jpg" alt="profile image">-->
@@ -248,7 +249,7 @@
                             <h5 class="mb-n1 font-weight-semibold" id ="follower3"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                          <h5 class="text-muted ml-auto" id="followername3"></h5>
                         </div>
                         <div class="d-flex py-2 border-bottom">
                           <!--<span class="img-sm rounded-circle bg-success text-white text-avatar">OB</span>-->
@@ -256,7 +257,7 @@
                             <h5 class="mb-n1 font-weight-semibold" id ="follower4"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                          <h5 class="text-muted ml-auto" id="followername4"></h5>
                         </div>
                         <div class="d-flex pt-2">
                           <!--<span class="img-sm rounded-circle bg-success text-white text-avatar">OB</span>-->
@@ -264,7 +265,7 @@
                             <h5 class="mb-n1 font-weight-semibold" id ="follower5"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                          <h5 class="text-muted ml-auto" id="followername5"></h5>
                         </div>
                   </div>
                 </div>
@@ -292,10 +293,17 @@
       document.getElementById("career3").innerHTML = personality_data["career"].split(", ")[2];
       document.getElementById("career4").innerHTML = personality_data["career"].split(", ")[3];
       document.getElementById("user_name").innerHTML = personality_data["name"]
-      document.getElementById("follower1").innerHTML = follower_ids["0"]+"  : "+follower_data["0"];
-      document.getElementById("follower2").innerHTML = follower_ids["1"]+"  : "+follower_data["1"];
-      document.getElementById("follower3").innerHTML = follower_ids["2"]+"  : "+follower_data["2"];
-      document.getElementById("follower4").innerHTML = follower_ids["3"]+"  : "+follower_data["3"];
+      document.getElementById("follower1").innerHTML = follower_ids["0"]; 
+      document.getElementById("follower2").innerHTML = follower_ids["1"];  
+      document.getElementById("follower3").innerHTML = follower_ids["2"];  
+      document.getElementById("follower4").innerHTML = follower_ids["3"]; 
+      document.getElementById("follower5").innerHTML = follower_ids["4"]; 
+      document.getElementById("followername1").innerHTML = follower_data["0"];
+      document.getElementById("followername2").innerHTML = follower_data["1"];
+      document.getElementById("followername3").innerHTML = follower_data["2"];
+      document.getElementById("followername4").innerHTML = follower_data["3"];
+      document.getElementById("followername5").innerHTML = follower_data["4"];
+      document.getElementById("per_name").innerHTML = personality_data["name"];
     </script>
     <script src="{{ url_for('static', filename= 'assets2/vendors/js/vendor.bundle.base.js')}}"></script>
     <script src="{{ url_for('static', filename= 'assets2/vendors/js/vendor.bundle.addons.js')}}"></script>

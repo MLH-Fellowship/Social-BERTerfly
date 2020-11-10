@@ -1,17 +1,17 @@
-type,traits,career,eminent personalities
-ISTJ,"Systematic, Factual, Organized, Logical, Responsible","Military officer, Lawyer, Judge, Police Officer, Detective","Henry Ford, Jeff Bezos, Julia Roberts, Natalie Portman"
-ISFJ,"Warm, Detailed, Caring, Practical, Factual","Counselor, Human Resource, Manager, Interior Designer","Jimmy Carter, Mother Teresa, Pope Francis, Tiger Woods"
-INFJ,"Visionary, Insightful, Creative, Sensitive, Persevering","Teacher, Social worker, Yoga instructor, Spiritual leader","Taylor Swift, Adolf Hitler, Mahatma Gandhi, Carl Jung"
-INTJ,"Visual oriented, Innovative, Conceptual, Logical, Determined","Project Manager, Systems Engineer,  Marketing Strategist, Systems Analyst, Military Strategist","Isaac Newton, Nikola Tesla, John Nash, Stephen Hawking, Jay-Z"
-ISTP,"Analytical, Practical, Adaptable, Curious, Problem-Solver","Mechanic, Engineer, Graphic Designer, Forensic Scientist","The Dalai Lama, Vladimir Putin, Bruce Lee, Tom Cruise"
-ISFP,"Compassionate, Aesthetic, Spontaneous, Helpful, Idealistic","Artist, Musician, Photographer, Designer","Michael Jackson, Steven Spielberg, David Beckham, Pablo Picasso"
-INFP,"Creative, Independent, Adaptable, Inquisitive, Caring","Writer, Bureaucrat, Social Worker, Psychologist, Teacher","William Shakespeare, Vincent Van Gogh, Hellen Keller, John Mayer"
-INTP,"Conceptual, Complex, Intellectual, Critical, Ingenious","Programmer, Computer Scientist, Web Developer, Composer, Economist, Scientist","Larry Page, Albert Einstein, Charles Darwin, Abraham Lincoln, "
-ESTP,"Adventurous, Pragmatic, Easygoing, Adaptable, Observant","Entrepreneur, Athlete, Police Officer, Paramedic, Soldier","Ernest Hemingway, Jack Nicholson,  Eddie Murphy, Madonna, "
-ESFP,"Energetic, Sociable, Friendly, Generous, Fun-loving","Event Planner, Sales Representative, Tour Guide, Nurse, Consultant","Elton John, Marilyn Monroe, Jamie Oliver, Adele, Jamie Foxx, Miley Cyrus"
-ENFP,"Enthusiastic, Imaginative, Creative, Playful, Optimistic","Diplomat, Journalist, Actor, Political Analyst ","Robert Downey Jr, Robin Williams, Quentin Taratino, RM, Will Smith"
-ENTP,"Theoretical, Inventive, Abstract, Analytical, Complex","Lawyer, Psychologist, Scientist, System Analyst, Consultant","Mark Twain, Tom Hanks, Thomas Edison, Celine Dion, "
-ESTJ,"Assertive, Decisive, Concrete, Active-organizer, Practical","Manager, Judge, Forensic Expert, Doctor","John Rockefeller, Judge Judy, Frank Sinatra, James Monroe"
-ESFJ,"Harmonizer, Caring, Empathic, Loyal, Cooperative","Optometrist, Office Manager, Corporate Trainer, Advertising Sales Agent","Bill Clinton, Steve Harvey, Sally Field, Danny Glover"
-ENFJ,"Appreciative, Insightful, Tactful, Imaginative, Sociable","Guidance Counselor, Teacher, Sales Manager, Art Director","Barack Obama,  Ben Afflek, Alfred Adler, Abraham Maslow"
-ENTJ,"Planner, Organized, Strategist, Logical, Critical","Accountant, Budget Analyst, Financial Manager, Financial Analyst, Cost Estimator","Harrison Ford, Margaret Thatcher, David Letterman, Franklin Roosevelt"
+type,traits,career,eminent personalities,name
+ISTJ,"Systematic, Factual, Organized, Logical, Responsible","Military officer, Lawyer, Judge, Police Officer, Detective","Henry Ford, Jeff Bezos, Julia Roberts, Natalie Portman",Logistician
+ISFJ,"Warm, Detailed, Caring, Practical, Factual","Counselor, Human Resource, Manager, Interior Designer","Jimmy Carter, Mother Teresa, Pope Francis, Tiger Woods",Defender
+INFJ,"Visionary, Insightful, Creative, Sensitive, Persevering","Teacher, Social worker, Yoga instructor, Spiritual leader","Taylor Swift, Adolf Hitler, Mahatma Gandhi, Carl Jung",Advocate
+INTJ,"Visual oriented, Innovative, Conceptual, Logical, Determined","Project Manager, Systems Engineer,  Marketing Strategist, Systems Analyst, Military Strategist","Isaac Newton, Nikola Tesla, John Nash, Stephen Hawking, Jay-Z",Architect
+ISTP,"Analytical, Practical, Adaptable, Curious, Problem-Solver","Mechanic, Engineer, Graphic Designer, Forensic Scientist","The Dalai Lama, Vladimir Putin, Bruce Lee, Tom Cruise",Virtuoso
+ISFP,"Compassionate, Aesthetic, Spontaneous, Helpful, Idealistic","Artist, Musician, Photographer, Designer","Michael Jackson, Steven Spielberg, David Beckham, Pablo Picasso",Adventurer
+INFP,"Creative, Independent, Adaptable, Inquisitive, Caring","Writer, Bureaucrat, Social Worker, Psychologist, Teacher","William Shakespeare, Vincent Van Gogh, Hellen Keller, John Mayer",Mediator
+INTP,"Conceptual, Complex, Intellectual, Critical, Ingenious","Programmer, Computer Scientist, Web Developer, Composer, Economist, Scientist","Larry Page, Albert Einstein, Charles Darwin, Abraham Lincoln, ",Logician
+ESTP,"Adventurous, Pragmatic, Easygoing, Adaptable, Observant","Entrepreneur, Athlete, Police Officer, Paramedic, Soldier","Ernest Hemingway, Jack Nicholson,  Eddie Murphy, Madonna, ",Entrepreneur
+ESFP,"Energetic, Sociable, Friendly, Generous, Fun-loving","Event Planner, Sales Representative, Tour Guide, Nurse, Consultant","Elton John, Marilyn Monroe, Jamie Oliver, Adele, Jamie Foxx, Miley Cyrus",Entertainer
+ENFP,"Enthusiastic, Imaginative, Creative, Playful, Optimistic","Diplomat, Journalist, Actor, Political Analyst ","Robert Downey Jr, Robin Williams, Quentin Taratino, RM, Will Smith",Campaigner
+ENTP,"Theoretical, Inventive, Abstract, Analytical, Complex","Lawyer, Psychologist, Scientist, System Analyst, Consultant","Mark Twain, Tom Hanks, Thomas Edison, Celine Dion, ",Debater
+ESTJ,"Assertive, Decisive, Concrete, Active-organizer, Practical","Manager, Judge, Forensic Expert, Doctor","John Rockefeller, Judge Judy, Frank Sinatra, James Monroe",Executive
+ESFJ,"Harmonizer, Caring, Empathic, Loyal, Cooperative","Optometrist, Office Manager, Corporate Trainer, Advertising Sales Agent","Bill Clinton, Steve Harvey, Sally Field, Danny Glover",Consul
+ENFJ,"Appreciative, Insightful, Tactful, Imaginative, Sociable","Guidance Counselor, Teacher, Sales Manager, Art Director","Barack Obama,  Ben Afflek, Alfred Adler, Abraham Maslow",Protagonist
+ENTJ,"Planner, Organized, Strategist, Logical, Critical","Accountant, Budget Analyst, Financial Manager, Financial Analyst, Cost Estimator","Harrison Ford, Margaret Thatcher, David Letterman, Franklin Roosevelt",Commander
