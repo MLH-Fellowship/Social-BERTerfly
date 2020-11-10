@@ -39,6 +39,7 @@ def tweet():
         return jsonify(user_type),200
 
 @app.route('/follow_pred', methods=['GET', 'POST'])
+#endpoint to fetch user followers
 def follow_tweet():
     # GET request
     if request.method == 'GET':
