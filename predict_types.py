@@ -78,6 +78,7 @@ def predict_tweet(username):
     perstr = "var personality_data="+str(op_json)+"\n"
     perfile.write(perstr)
     perfile.close()
+    predict_follow(username)
     return op_json
 
 def predict_follow(username):
