@@ -7,5 +7,6 @@ personality_env/
 /server/twitter_data/
 geckodriver.log
 fbscraper.py
+models/
 /server/.env
 .DS_Store
