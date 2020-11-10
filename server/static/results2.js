@@ -1,2 +1,2 @@
-var follower_data={'0': 'ISTJ', '1': 'ISFP', '2': 'ISFP', '3': 'ENFP', '4': 'ISTJ'}
-var follower_ids={'0': 'soniasinglas', '1': 'gayathri_venky', '2': 'sublimino', '3': 'cdibona', '4': 'sunilgovind'}
+var follower_data={'0': 'INFP', '1': 'ISFP', '2': 'ISFP', '3': 'ISFP', '4': 'ISFP'}
+var follower_ids={'0': 'BillClinton', '1': 'Merone', '2': 'KamalaHarris', '3': 'MBK_Alliance', '4': 'robertwolf32'}
