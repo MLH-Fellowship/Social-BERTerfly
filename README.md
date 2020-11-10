@@ -1,6 +1,6 @@
 # Social BERTerfly 🦋
  
-Social BERTerfly predicts your personality out of the 16 Myers-Briggs Type Personalities by your Twitter Username. It utilizes machine learning classifier and NLP using the state of the art language model - **BERT** (Bidirectional Encoder Representations from Transformers) to predict the personality type of the given user based on their recent tweets.
+Social BERTerfly predicts your personality out of the 16 Myers-Briggs Type Personalities by your Twitter handle and compares your personality types with your followers. It utilizes machine learning classifier and NLP using the state of the art language model - **BERT** (Bidirectional Encoder Representations from Transformers) to predict the personality type of the given user based on their recent tweets.
 
 ## Getting Started:
 
@@ -22,12 +22,17 @@ Follow the below steps to run and explore your personality types, as well as tha
 - Run the following in your terminal:
 
   `flask run`
-- Wait around 15 seconds for the model to return your predictions.
+- Wait around 15 seconds for the model to load.
 - Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your followers!
+
+### An Example:
+
+<pls put screenshots here>
+
 
 ### Start contributing! 📣 
 
-If you wish to contribute to our model, you can take a look at our notebook, and provide suggestions, comments.
+If you wish to contribute to our model, you can take a look at our notebook, and provide suggestions or comments.
 
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10Dj-ySjfZVqOWg25ywmPsdrnk9XJoFP-?usp=sharing)
   
@@ -100,7 +105,7 @@ We tested using a LSTM model, and BERT-base to contrast accuracies.
 
 | Model      | Train accuracy | Validation accuracy
 | ----------- | ----------- | ---------------| 
-| LSTM baseline      |  18.96%       | 20.9%|
+| LSTM baseline      |  18.96%       | 16.9%|
 | BERT-base-uncased   | 85%        | 79%|
 
 ### Deployment:
