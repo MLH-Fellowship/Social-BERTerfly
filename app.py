@@ -27,7 +27,7 @@ def testfn():
 def tweet():
     # GET request
     if request.method == 'GET':
-        return render_template('result.html')
+        return render_template('dashboard.html')
     # POST request
     if request.method == 'POST':
         data = request.get_json()  # parse as JSON

@@ -1,0 +1,1 @@
+var personality_data={'type': 'ISFP', 'introvertism': 61, 'extrovertism': 38, 'intuition': 37, 'sensing': 62, 'feeling': 56, 'thinking': 43, 'judging': 40, 'perceiving': 59, 'traits': 'Compassionate, Aesthetic, Spontaneous, Helpful, Idealistic', 'career': 'Artist, Musician, Photographer, Designer', 'people': 'Michael Jackson, Steven Spielberg, David Beckham, Pablo Picasso'}
