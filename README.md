@@ -1,30 +1,38 @@
 # Social BERTerfly 🦋
+
+![Open In Colab](https://img.shields.io/github/issues-closed/MLH-Fellowship/Social-BERTerfly?style=for-the-badge)
+![](https://img.shields.io/github/issues-pr-closed/MLH-Fellowship/Social-BERTerfly?color=green&style=for-the-badge)
  
 Social BERTerfly predicts your personality out of the 16 Myers-Briggs Type Personalities by your Twitter handle and compares your personality types with your followers. It utilizes machine learning classifier and NLP using the state of the art language model - **BERT** (Bidirectional Encoder Representations from Transformers) to predict the personality type of the given user based on their recent tweets.
 
-## Getting Started:
+## Getting Started: 🙌
 
 ### How to run locally:
 
 Follow the below steps to run and explore your personality types, as well as that of your friends!
 
 - `git clone https://github.com/MLH-Fellowship/Social-BERTerfly.git`
-- Install dependencies by: 
 
-  `pip install -r requirements.txt`
-
-(you can install the packages in a virtualenv if you prefer)
 - Install our model weights from the following Drive link:
 
-  [BERT_model](https://drive.google.com/file/d/1yDt-fs0lYFGgplwlteKRd7xSxH8RVcIf/view?usp=sharing)
+  [BERT_base_model](https://drive.google.com/file/d/1yDt-fs0lYFGgplwlteKRd7xSxH8RVcIf/view?usp=sharing)
 
 - Place the downloaded `.h5` model under `server/models/`.
 - Navigate to the server folder by:
 
   `cd server/`
+- Install dependencies by: 
+
+  `pip install -r requirements.txt`
+(you can install the packages in a virtualenv if you prefer)
+
 - Run the following in your terminal:
 
   `flask run`
+  
+  or,
+  `python app.py`
+  
 - Wait around 15 seconds for the model to load.
 - Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your followers!
 
@@ -44,7 +52,7 @@ If you wish to contribute to our model, you can take a look at our notebook, and
 - Twitter API for fetching tweets 
 - `tweepy` for connecting the API with Python (https://pypi.org/project/tweepy/)
 - Flask for the backend server
-- Google colaboratory for collaborating on the model. 
+- Google colaboratory for collaborating on the model and accessing the free TPU 😂
 - Keras for training and testing the BERT model
 - BERT as a SOTA model for tweet predictions. (https://arxiv.org/abs/1810.04805)
  - Bootstrap for the homepage and the dashboard UI
@@ -84,7 +92,7 @@ Using `tweepy` and Twitter API, we fetch the 50 latest tweets posted by the user
 
 ### Data preprocessing:
 
-We have used `regex` to detect special characters like '@,emojis' etc. from the posts, remove stopwords and punctuation, convert the text to lowercase and stemming to extract the root of words. The preprocessed data is split using `train_test split` and sent to the Keras model for predictions.
+We have used `regex` to detect special characters like '@,emojis' etc. from the posts, remove stopwords and punctuation, convert the text to lowercase and stemming to extract the root of words. The preprocessed data is split using `train_test split` and sent to the Keras model for predictions. 
 
 ### BERT Model summary:
 
