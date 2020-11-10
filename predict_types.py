@@ -93,6 +93,10 @@ def predict_follow(username):
         tweet_ind = tweet_vals.argmax(axis=1)
         print (per_types[stats.mode(tweet_ind).mode[0]])
         follow_json[str(i)] = per_types[stats.mode(tweet_ind).mode[0]]
+        perfile = open("static/results2.js","w")
+        perstr = "var follower_data="+str(follow_json)+"\n"
+        perfile.write(perstr)
+        perfile.close()
     return follow_json
     
 

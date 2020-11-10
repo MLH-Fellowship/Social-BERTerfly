@@ -22,6 +22,7 @@
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{ url_for('static', filename= 'assets2/images/favicon.ico')}}" />
     <script src = "/static/results.js"></script>
+    <script src = "/static/results2.js"></script>
   </head>
   <body>
     <div class="container-scroller">
@@ -193,7 +194,7 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item nav-category">Main Menu</li>
+            <li class="nav-item nav-category"></li>
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1:5000/tweet_pred">
                 <i class="menu-icon typcn typcn-document-text"></i>
@@ -335,54 +336,16 @@
                       <div class="col-lg-6 col-md-6">
                         <div class="d-flex">
                           <div class="wrapper">
-                            <h1 class="mb-0 font-weight-semibold text-primary">Your Personality Is</h1>
+                            <h1 class="mb-0 font-weight-semibold text-primary">Your Personality Type :</h1>
                             <!--<h5 class="mb-0 font-weight-medium text-primary">____%</h5>-->
                             <!--<p class="mb-0 text-muted">+14.00(+0.50%)</p>-->
                           </div>
                           <div class="wrapper my-auto ml-auto ml-lg-4">
                             <!--<canvas height="50" width="100" id="stats-line-graph-1"></canvas>-->
-                            <!--<h5 class="mb-0 font-weight-medium text-primary">Personality Type</h5>--> 
+                            <h1 class="mb-n1 font-weight-semibold" id="per_type"></h1> 
                           </div>
                         </div>
                       </div>
-                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                        <!--<div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">Personality 2</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">____%</h5>
-                            <p class="mb-0 text-muted">+138.97(+0.54%)</p>
-                          </div>
-                          <div class="wrapper my-auto ml-auto ml-lg-4">
-                            <canvas height="50" width="100" id="stats-line-graph-2">_____%</canvas>
-                            <h5 class="mb-0 font-weight-medium text-primary">____%</h5> 
-                          </div>
-                        </div>-->
-                      </div>
-                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                        <!--<div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">Personality 3</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">_____%</h5>
-                            <p class="mb-0 text-muted">+57.62(+0.76%)</p>
-                          </div>-->
-                          <div class="wrapper my-auto ml-auto ml-lg-4" id="per_type">
-                            <!--<canvas height="50" width="100" id="stats-line-graph-3"></canvas>-->
-                          </div>
-                        <!--</div>-->
-                      </div>
-                      <!--<div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                        div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">Personality 4</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">____%</h5>
-                            <p class="mb-0 text-muted">+138.97(+0.54%)</p>
-                          </div>
-                          <div class="wrapper my-auto ml-auto ml-lg-4">
-                            <canvas height="50" width="100" id="stats-line-graph-4"></canvas>
-                            <h1 class="mb-0 font-weight-medium text-primary">Personality Type</h1> 
-                          </div>
-                        </div>
-                      </div>-->
                     </div>
                   </div>
                 </div>
@@ -392,37 +355,39 @@
               <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h3 class="mb-0 font-weight-semibold">Top Personality Traits</h3><!--"card-title mb-0"-->
-                    <div class="d-flex flex-column flex-lg-row">
-                      <div class="wrapper ml-2">
-                        <h5 class="mb-n1 font-weight-semibold" id="trait1"></h5>
-                        <!--<small>162543</small>-->
-                      </div>
-                      <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
-                    </div>
-                    <div class="d-flex py-2 border-bottom">
-                      <!--<span class="img-sm rounded-circle bg-warning text-white text-avatar">OH</span>-->
-                      <div class="wrapper ml-2">
-                        <h5 class="mb-n1 font-weight-semibold" id="trait2"></h5>
-                        <!--<small>162543</small>-->
-                      </div>
-                      <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
-                    </div>
-                    <div class="d-flex py-2 border-bottom">
-                      <!--<img class="img-sm rounded-circle" src="assets/images/faces/face4.jpg" alt="profile image">-->
-                      <div class="wrapper ml-2">
-                        <h5 class="mb-n1 font-weight-semibold" id="trait3"></h5>
-                        <!--<small>162543</small>-->
-                      </div>
-                      <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
-                    </div>
-                    <div class="d-flex pt-2">
-                      <!--<span class="img-sm rounded-circle bg-success text-white text-avatar">OB</span>-->
-                      <div class="wrapper ml-2">
-                        <h5 class="mb-n1 font-weight-semibold" id="trait4"></h5>
-                        <!--<small>162543</small>-->
-                      </div>
-                    </div>
+                    <h3 class="mb-0 font-weight-semibold">Personality Traits</h3>
+                        <div class="d-flex mt-3 py-2 border-bottom">
+                          <!--<img class="img-sm rounded-circle" src="assets/images/faces/face3.jpg" alt="profile image">-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id="trait1"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
+                        </div>
+                        <div class="d-flex py-2 border-bottom">
+                          <!--<span class="img-sm rounded-circle bg-warning text-white text-avatar">OH</span>-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id="trait2"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
+                        </div>
+                        <div class="d-flex py-2 border-bottom">
+                          <!--<img class="img-sm rounded-circle" src="assets/images/faces/face4.jpg" alt="profile image">-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id="trait3"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
+                        </div>
+                        <div class="d-flex pt-2">
+                          <!--<span class="img-sm rounded-circle bg-success text-white text-avatar">OB</span>-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id="trait4"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!--<h5 class="text-muted ml-auto">Personality Type</h5>-->
+                        </div>
                     <!--<div class="d-flex flex-column flex-lg-row">
                       <div class="data-wrapper d-flex mt-2 mt-lg-0">
                         <div class="wrapper pr-5">
@@ -463,38 +428,38 @@
               <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h3 class="mb-0 font-weight-semibold">Followers</h3>
+                    <h3 class="mb-0 font-weight-semibold">Careers</h3>
                         <div class="d-flex mt-3 py-2 border-bottom">
                           <!--<img class="img-sm rounded-circle" src="assets/images/faces/face3.jpg" alt="profile image">-->
                           <div class="wrapper ml-2">
-                            <h5 class="mb-n1 font-weight-semibold">Follower 1</h5>
+                            <h5 class="mb-n1 font-weight-semibold" id ="career1"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <h5 class="text-muted ml-auto">Personality Type</h5>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
                         </div>
                         <div class="d-flex py-2 border-bottom">
                           <!--<span class="img-sm rounded-circle bg-warning text-white text-avatar">OH</span>-->
                           <div class="wrapper ml-2">
-                            <h5 class="mb-n1 font-weight-semibold">Follower 2</h5>
+                            <h5 class="mb-n1 font-weight-semibold" id ="career2"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <h5 class="text-muted ml-auto">Personality Type</h5>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
                         </div>
                         <div class="d-flex py-2 border-bottom">
                           <!--<img class="img-sm rounded-circle" src="assets/images/faces/face4.jpg" alt="profile image">-->
                           <div class="wrapper ml-2">
-                            <h5 class="mb-n1 font-weight-semibold">Follower 3</h5>
+                            <h5 class="mb-n1 font-weight-semibold" id ="career3"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <h5 class="text-muted ml-auto">Personality Type</h5>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
                         </div>
                         <div class="d-flex pt-2">
                           <!--<span class="img-sm rounded-circle bg-success text-white text-avatar">OB</span>-->
                           <div class="wrapper ml-2">
-                            <h5 class="mb-n1 font-weight-semibold">Follower 4</h5>
+                            <h5 class="mb-n1 font-weight-semibold" id ="career4"></h5>
                             <!--<small>162543</small>-->
                           </div>
-                          <h5 class="text-muted ml-auto">Personality Type</h5>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
                         </div>
                   </div>
                 </div>
@@ -539,6 +504,47 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="mb-0 font-weight-semibold">Personality type of Followers</h3>
+                        <div class="d-flex mt-3 py-2 border-bottom">
+                          <!--<img class="img-sm rounded-circle" src="assets/images/faces/face3.jpg" alt="profile image">-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id ="follower1"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                        </div>
+                        <div class="d-flex py-2 border-bottom">
+                          <!--<span class="img-sm rounded-circle bg-warning text-white text-avatar">OH</span>-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id ="follower2"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                        </div>
+                        <div class="d-flex py-2 border-bottom">
+                          <!--<img class="img-sm rounded-circle" src="assets/images/faces/face4.jpg" alt="profile image">-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id ="follower3"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                        </div>
+                        <div class="d-flex pt-2">
+                          <!--<span class="img-sm rounded-circle bg-success text-white text-avatar">OB</span>-->
+                          <div class="wrapper ml-2">
+                            <h5 class="mb-n1 font-weight-semibold" id ="follower4"></h5>
+                            <!--<small>162543</small>-->
+                          </div>
+                          <!-- <h5 class="text-muted ml-auto">Personality Type</h5> -->
+                        </div>
+                  </div>
+                </div>
+              </div>
+              </div>
               <!--<div class="col-md-8">
                 <div class="row">
                   <div class="col-md-6 grid-margin stretch-card">
@@ -963,6 +969,14 @@
       document.getElementById("people2").innerHTML = personality_data["people"].split(", ")[1];
       document.getElementById("people3").innerHTML = personality_data["people"].split(", ")[2];
       document.getElementById("people4").innerHTML = personality_data["people"].split(", ")[3];
+      document.getElementById("career1").innerHTML = personality_data["career"].split(", ")[0];
+      document.getElementById("career2").innerHTML = personality_data["career"].split(", ")[1];
+      document.getElementById("career3").innerHTML = personality_data["career"].split(", ")[2];
+      document.getElementById("career4").innerHTML = personality_data["career"].split(", ")[3];
+      document.getElementById("follower1").innerHTML = follower_data["0"];
+      document.getElementById("follower2").innerHTML = follower_data["1"];
+      document.getElementById("follower3").innerHTML = follower_data["2"];
+      document.getElementById("follower4").innerHTML = follower_data["3"];
     </script>
     <script src="{{ url_for('static', filename= 'assets2/vendors/js/vendor.bundle.base.js')}}"></script>
     <script src="{{ url_for('static', filename= 'assets2/vendors/js/vendor.bundle.addons.js')}}"></script>
