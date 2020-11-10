@@ -190,15 +190,13 @@
                   <input type="text" name="name" class="form-control" id="twitter_handle" placeholder="Your Twitter Handle"/>
                 </div>
               </div>
-              <div class="text-center"><button onClick="mytweet()", type="submit">Submit</button></div>
-              <div id="response"></div>
-              <br>
-              <div id="respons"></div>
-              <div class="text-center">
-              <button type="submit" onClick="myres()", id="results" value="Explore full results">
-                Go to Dashboard 
-              </button>
+              <div style="text-align: center;">
+                <button style="display: inline-block;" onClick="mytweet()", type="submit">Submit</button>
+                <button style="display: inline-block;" type="submit" onClick="myres()">Go to Dashboard </button>
               </div>
+              <br>
+              <div id="response" style='text-align: center;'></div>
+
               <script>
                 function mytweet() {
                   var text = document.getElementById('twitter_handle').value;
@@ -225,7 +223,6 @@
                         `;
                        
                     document.getElementById("response").innerHTML = output; 
-                    document.getElementById("results").style.display = "block";
                   });
                 }
                 function myres(){
