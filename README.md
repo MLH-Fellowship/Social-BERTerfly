@@ -18,7 +18,10 @@ Follow the below steps to run and explore your personality types, as well as tha
 
   [BERT_model](https://drive.google.com/file/d/1yDt-fs0lYFGgplwlteKRd7xSxH8RVcIf/view?usp=sharing)
 
-- Place the downloaded `.h5` model under `models/`.
+- Place the downloaded `.h5` model under `server/models/`.
+- Navigate to the server folder by:
+
+  `cd server/`
 - Run the following in your terminal:
 
   `flask run`
@@ -43,7 +46,7 @@ If you wish to contribute to our model, you can take a look at our notebook, and
 - Flask for the backend server
 - Google colaboratory for collaborating on the model. 
 - Keras for training and testing the BERT model
-- BERT as a SOTA model for tweet predictions.
+- BERT as a SOTA model for tweet predictions. (https://arxiv.org/abs/1810.04805)
  - Bootstrap for the homepage and the dashboard UI
  - `chartjs` for displaying graphs on the Dashboard
 
@@ -65,10 +68,12 @@ It is one of, if not the, the most popular personality test in the world. It is 
 
 ### Dataset 
 
-For the [dataset](https://www.kaggle.com/datasnaek/mbti-type), we have used the famous Myers-Briggs Personality Type Dataset that includes a large number of people's MBTI type and content written by them.
-This dataset contains over 8600 rows of data, on each row is a person’s:
+For the [dataset](https://www.kaggle.com/datasnaek/mbti-type), we have used the famous **Myers-Briggs Personality** Type Dataset that includes a large number of people's MBTI type and content written by them.
+This dataset contains over **8600** rows of data, on each row is a person’s:
+```
 - Type (This persons 4 letter MBTI code/type)
 - A section of each of the last 50 things they have posted (Each entry separated by "|||" (3 pipe characters))
+```
 
 ### BERT 
 Bidirectional Encoder Representations from Transformers (BERT) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. BERT was created and published in 2018 by Jacob Devlin and his colleagues from Google. As of 2019, Google has been leveraging BERT to better understand user searches.
@@ -79,7 +84,7 @@ Using `tweepy` and Twitter API, we fetch the 50 latest tweets posted by the user
 
 ### Data preprocessing:
 
-We have used regex to detect special characters like '@,emojis' etc. from the posts, remove stopwords and punctuation, convert the text to lowercase and stemming to extract the root of words. The preprocessed data is split using `train_test split` and sent to the Keras model for predictions.
+We have used `regex` to detect special characters like '@,emojis' etc. from the posts, remove stopwords and punctuation, convert the text to lowercase and stemming to extract the root of words. The preprocessed data is split using `train_test split` and sent to the Keras model for predictions.
 
 ### BERT Model summary:
 
@@ -88,7 +93,7 @@ Layer (type)                 Output Shape              Param #
 =================================================================
 input_word_ids (InputLayer)  [(None, 1500)]            0         
 _________________________________________________________________
-tf_bert_model_1 (TFBertModel ((None, 1500, 768), (None 109482240 
+tf_bert_model_1 (TFBertModel ((None, 1500, 768), (None 109482240)) 
 _________________________________________________________________
 tf_op_layer_strided_slice_1  [(None, 768)]             0         
 _________________________________________________________________
@@ -121,3 +126,5 @@ Social BERTerfly is fully Open-Source and open for contributions! We request you
 - [Dipanwita Guhathakurta](https://github.com/susiejojo)
 - [Shilpita Biswas](https://github.com/sh-biswas)
 - [Vividha](https://github.com/V2dha)
+
+Made with ❤️️ by Team Social-BERTerfly as part of MLH Explorer Fall Fellowship 2020 Sprint3.
