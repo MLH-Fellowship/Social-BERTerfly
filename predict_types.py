@@ -85,6 +85,7 @@ def predict_tweet(username):
 def predict_follow(username):
     follow_df = pd.read_csv("twitter_data/fol_"+str(username)+".csv")
     follow_json = {}
+    follow_ids = {}
     for i in range(5):
         list_j = follow_df.tweets.iloc[i].split(", \'")
         new_list = []
@@ -95,9 +96,12 @@ def predict_follow(username):
         tweet_ind = tweet_vals.argmax(axis=1)
         print (per_types[stats.mode(tweet_ind).mode[0]])
         follow_json[str(i)] = per_types[stats.mode(tweet_ind).mode[0]]
+        follow_ids[str(i)] = follow_df.follower.iloc[i]
         perfile = open("static/results2.js","w")
         perstr = "var follower_data="+str(follow_json)+"\n"
+        folstr = "var follower_ids="+str(follow_ids)+"\n"
         perfile.write(perstr)
+        perfile.write(folstr)
         perfile.close()
     return follow_json
     
