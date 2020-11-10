@@ -48,6 +48,9 @@ P.S: If you ain't into the boring stuff, head on over to the next section to con
 
 ### About MBTI 
 The Myers Briggs Type Indicator (or MBTI for short) is a personality type system that divides everyone into 16 distinct personality types across 4 axis:
+
+![img](https://i1.wp.com/www.honorsgradu.com/wp-content/uploads/2020/02/mbtifinal.jpg?resize=400%2C380&ssl=1)
+
 - Introversion (I) – Extroversion (E)
 - Intuition (N) – Sensing (S)
 - Thinking (T) – Feeling (F)
@@ -93,7 +96,12 @@ Non-trainable params: 0
 
 ### Results achieved:
 
-Currently the BERT base model achieves an accuracy of 85% on the Kaggle dataset training data, and 76% on the validation set. 
+We tested using a LSTM model, and BERT-base to contrast accuracies.
+
+| Model      | Train accuracy | Validation accuracy
+| ----------- | ----------- | ---------------| 
+| LSTM baseline      |  18.96%       | 20.9%|
+| BERT-base-uncased   | 85%        | 79%|
 
 ### Deployment:
 
