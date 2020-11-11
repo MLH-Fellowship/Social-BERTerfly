@@ -38,16 +38,42 @@ Follow the below steps to run and explore your personality types, as well as tha
 - Wait around 15 seconds for the model to load.
 - Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your following!
 
-### An Example:
-
-<pls put screenshots here>
-
 
 ### Start contributing! 📣 
 
 If you wish to contribute to our model, you can take a look at our notebook, and provide suggestions or comments.
 
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10Dj-ySjfZVqOWg25ywmPsdrnk9XJoFP-?usp=sharing)
+  
+### An Example:
+
+**Landing Page**:
+
+![h1](https://user-images.githubusercontent.com/51776663/98763145-3f581f00-238e-11eb-9c15-e59c3d898e7a.png)
+
+**A brief description of personality types**:
+
+![h2](https://user-images.githubusercontent.com/51776663/98763146-42eba600-238e-11eb-924e-2c45792281bb.png)
+
+
+**Try it Out**:
+
+Head over to the `Get Started` section to put it your Twitter Handle and press `Submit`. The model should take approx. 15 sec to return your predicted personality type on the screen as follows:
+![Homepage](https://user-images.githubusercontent.com/51776663/98763149-441cd300-238e-11eb-983d-8b7d3ad5e877.png)
+
+
+**Head over to the Dashboard**:
+
+Click on `Go to Dashboard` to get detailed personality analysis along with career suggestions.
+
+![d](https://user-images.githubusercontent.com/51776663/98763154-467f2d00-238e-11eb-9e08-75589b52a507.png)
+
+**Compare personality types!**:
+
+Now you can also compare your personality type against that of your followers and friends!
+
+![d2](https://user-images.githubusercontent.com/51776663/98763157-4848f080-238e-11eb-9887-c463a77045c8.png)
+
   
 ## Tech Stack:
 
