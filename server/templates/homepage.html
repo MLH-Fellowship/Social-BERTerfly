@@ -191,12 +191,11 @@
                 </div>
               </div>
               <div style="text-align: center;">
-                <button style="display: inline-block;" onClick="mytweet()", type="submit">Submit</button>
+                <button style="display: inline-block;" onClick="mytweet()" type="submit">Submit</button>
                 <button style="display: inline-block;" type="submit" onClick="myres()">Go to Dashboard </button>
               </div>
               <br>
               <div id="response" style='text-align: center;'></div>
-
               <script>
                 function mytweet() {
                   var text = document.getElementById('twitter_handle').value;
@@ -227,29 +226,27 @@
                 }
                 function myres(){
                   window.location.href = "http://127.0.0.1:5000/tweet_pred";
-                }
-
-                
-        function myfollowers() {
-        var text = document.getElementById('twitter_handle').value;
-        console.log(text);
-        const url = 'http://127.0.0.1:5000/follow_pred';
-        let send_data = JSON.stringify({
-            'handle': text
-        });
-        let fetchData = {
-            method: 'POST',
-            // mode: 'cors',
-            body: send_data,
-            headers:  {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              }
-        }
-        fetch(url, fetchData)
-      .then(response => response.json())
-        .then(follow_pred => {
-          let output = `<h3>${follow_pred["type"]}</h3>`;
+                }          
+                function myfollowers() {
+                  var text = document.getElementById('twitter_handle').value;
+                  console.log(text);
+                  const url = 'http://127.0.0.1:5000/follow_pred';
+                  let send_data = JSON.stringify({
+                  'handle': text
+                  });
+                  let fetchData = {
+                    method: 'POST',
+                    // mode: 'cors',
+                    body: send_data,
+                    headers:  {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    }
+                  }
+                  fetch(url, fetchData)
+                    .then(response => response.json())
+                      .then(follow_pred => {
+                        let output = `<h3>${follow_pred["type"]}</h3>`;
       document.getElementById("respons").innerHTML = output; 
       document.getElementById("results").style.display = "block";
     });
@@ -284,6 +281,7 @@
   <!-- Template Main JS File -->
   <script src="static/assets/js/main.js"></script>
 
+  <!--Outside JS Files-->
 </body>
 
 </html>
