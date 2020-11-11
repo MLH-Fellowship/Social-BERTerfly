@@ -36,7 +36,7 @@ Follow the below steps to run and explore your personality types, as well as tha
   `python app.py`
   
 - Wait around 15 seconds for the model to load.
-- Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your followers!
+- Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your following!
 
 ### An Example:
 
