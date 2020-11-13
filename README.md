@@ -3,7 +3,7 @@
 ![Open In Colab](https://img.shields.io/github/issues-closed/MLH-Fellowship/Social-BERTerfly?style=for-the-badge)
 ![](https://img.shields.io/github/issues-pr-closed/MLH-Fellowship/Social-BERTerfly?color=green&style=for-the-badge)
  
-*Predicts your personality out of the 16 Myers-Briggs Type Personalities by your Twitter handle and compares your personality types with your followers*
+*Predicts your personality out of the 16 Myers-Briggs Type Personalities by your Twitter handle and compares your personality types with the people that you follow*
 
 > It utilizes machine learning classifier and NLP using the state of the art language model - **BERT** (Bidirectional Encoder Representations from Transformers) to predict the personality type of the given user based on their recent tweets.
 
