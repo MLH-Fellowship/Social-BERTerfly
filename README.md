@@ -38,6 +38,8 @@ Follow the below steps to run and explore your personality types, as well as tha
 - Wait around 15 seconds for the model to load.
 - Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your following!
 
+Note : You would need .env file with auth credentials to use the API. We will be working on credentials free scraper. 
+
 
 ### Start contributing! 📣 
 
