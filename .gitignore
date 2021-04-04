@@ -4,7 +4,6 @@ __pycache__/
 /server/models/pretrained_BERT/
 .ipynb_checkpoints/
 personality_env/
-/server/twitter_data/
 /server/static/results.js
 /server/static/results2.js
 geckodriver.log

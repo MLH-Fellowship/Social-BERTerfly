@@ -50,17 +50,17 @@ class TwitterClient(object):
             print('failed on_status,',str(e))
             time.sleep(3)
     def get_user_followers(self,user):
-        # to fetch 5 followers of the user and their personality types
+        # to fetch 5 following of the user and their personality types
         username = user
 
         follower_ids = []
         nfollowers = 5
-        print ("Getting followers...")
+        print ("Getting following...")
         users = tweepy.Cursor(self.api.friends,id = username,count=nfollowers).items(nfollowers)
         tweets_list = []
         for user in users:
             # tweet_user = []
-            print ("Adding followers...")
+            print ("Adding following...")
             try:
                 follower_ids.append(user.screen_name)
                 tweets = tweepy.Cursor(self.api.user_timeline,id=user.screen_name).items(10)
