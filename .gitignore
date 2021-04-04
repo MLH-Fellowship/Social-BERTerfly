@@ -9,4 +9,5 @@ personality_env/
 geckodriver.log
 fbscraper.py
 models/
+# /server/.env
 .DS_Store
