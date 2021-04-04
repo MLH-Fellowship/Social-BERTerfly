@@ -28,6 +28,10 @@ Follow the below steps to run and explore your personality types, as well as tha
   `pip install -r requirements.txt`
 (you can install the packages in a virtualenv if you prefer)
 
+- Add your Twitter API keys and authorization credentials in the .env file. To get Twitter API key you can refer to this article - https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api
+
+- Create a new folder "twitter_data" in the same directory to store the fetched tweets.
+
 - Run the following in your terminal:
 
   `flask run`
@@ -38,8 +42,7 @@ Follow the below steps to run and explore your personality types, as well as tha
 - Wait around 15 seconds for the model to load.
 - Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your following!
 
-Note : You would need .env file with auth credentials to use the API. We will be working on credentials free scraper. 
-
+Note : Make sure to click on Submit button first to fetch the tweets and results. After the personality type is displayed on the landing page, click on Go to Dashboard to for detailed analysis.
 
 ### Start contributing! 📣 
 
