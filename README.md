@@ -29,7 +29,7 @@ Follow the below steps to run and explore your personality types, as well as tha
 (you can install the packages in a virtualenv if you prefer)
 
 - Add your Twitter API keys and authorization credentials in the .env file. To get Twitter API key you can refer to this article - https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api. **Do not make a PR or publish .env file with your Twitter API key and credentials.** Create a separate copy of .env file in your cloned repo and delete if afteruse or you can uncomment the "/server/.env" in gitignore.
--  
+
 - Create a new folder "twitter_data" in the same directory to store the fetched tweets.
 
 - Run the following in your terminal:
