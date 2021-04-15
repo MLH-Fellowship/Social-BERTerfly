@@ -42,7 +42,7 @@ Follow the below steps to run and explore your personality types, as well as tha
 - Wait around 15 seconds for the model to load.
 - Visit the application at `http://127.0.0.1:5000/` and enjoy exploring various personality traits for you and your following!
 
-Note : Make sure to click on Submit button first to fetch the tweets and results. After the personality type is displayed on the landing page, click on Go to Dashboard to for detailed analysis.
+Note : Make sure to click on Submit button first to fetch the tweets and results. After the personality type is displayed on the landing page, click on Go to Dashboard for detailed analysis.
 
 ### Start contributing! 📣 
 
