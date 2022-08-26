@@ -17,7 +17,7 @@ Follow the below steps to run and explore your personality types, as well as tha
 
 - Install our model weights from the following Drive link:
 
-  [BERT_base_model](https://drive.google.com/file/d/1yDt-fs0lYFGgplwlteKRd7xSxH8RVcIf/view?usp=sharing)
+  [BERT_base_model](https://drive.google.com/file/d/1u2aKcmZsZZO0z8tNexbEo252cQti-lXo/view?usp=sharing)
 
 - Place the downloaded `.h5` model under `server/models/`.
 - Navigate to the server folder by:
